@@ -3,16 +3,10 @@
 [ext_resource path="res://cartes/carte_base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cartes/carte_shield.gd" type="Script" id=2]
 
-[node name="carte_base" index="0" instance=ExtResource( 1 )]
+[node name="carte_base" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-<<<<<<< HEAD
 speed = null
 rot = null
-=======
-rot = 2.0
-player = 1
-dmgToPlayer = 1
->>>>>>> 4d9136c45c8c6372dd9767a430e417823678bce5
 
 

@@ -20,7 +20,6 @@ func _ready():
 	else:
 		set_collision_layer(4)
 	
-	selected=false;
 	set_mode(MODE_STATIC)
 
 func _process(delta):

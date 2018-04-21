@@ -25,7 +25,7 @@ filter_clip = false
 custom_solver_bias = 0.0
 extents = Vector2( 61.091, 76.0665 )
 
-[node name="carte_base" type="RigidBody2D" index="0" groups=[
+[node name="carte_base" type="RigidBody2D" groups=[
 "Carte",
 ]]
 
@@ -52,9 +52,9 @@ _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform" ]
 speed = 300.0
 rot = 2.0
 player = null
-dmg = null
+dmg = 1
 spriteNo = null
-HP = null
+HP = 1
 
 [node name="cache" type="Sprite" parent="." index="0"]
 
