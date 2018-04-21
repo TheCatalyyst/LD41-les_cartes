@@ -6,10 +6,7 @@
 [node name="carte_base" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-rot = 2.0
-player = 1
-dmgToPlayer = 1
-HP = 3
+speed = null
+rot = null
 
 
