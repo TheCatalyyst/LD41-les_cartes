@@ -13,18 +13,18 @@ flags = 4
 gradient = SubResource( 1 )
 width = 2048
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=3]
 
 offsets = PoolRealArray( 0, 1 )
 colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=6]
+[sub_resource type="GradientTexture" id=4]
 
 flags = 4
-gradient = SubResource( 5 )
+gradient = SubResource( 3 )
 width = 2048
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 61.091, 76.0665 )
@@ -70,13 +70,13 @@ texture = SubResource( 2 )
 
 position = Vector2( 0.560684, -0.746849 )
 scale = Vector2( 0.0599089, 27.5658 )
-texture = SubResource( 6 )
+texture = SubResource( 4 )
 _sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 0.970604, -0.323534 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_carte_base_body_entered"]
 

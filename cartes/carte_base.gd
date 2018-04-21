@@ -14,7 +14,7 @@ export (int) var HP;
 var state #"hidden", "visible", "throwed"
 
 func _ready():
-	set_collision_mask(2)
+	set_collision_mask(0)
 	if(player == 1):
 		set_collision_layer(1)
 	else:
@@ -39,9 +39,9 @@ func lancer(dir):
 	set_collision_layer(2)
 	
 	if(player == 1):
-		set_collision_mask(3)
-	else:
 		set_collision_mask(6)
+	else:
+		set_collision_mask(3)
 	
 	set_mode(MODE_RIGID)
 	set_linear_velocity(dir.normalized()*speed)

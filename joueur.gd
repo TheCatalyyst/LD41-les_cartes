@@ -54,6 +54,7 @@ func piocher_carte():
 		
 	if(child_id < $Cartes.get_child_count()):
 		var carte_pioche = load(pioche[randi() % pioche.size()]).instance()
+		carte_pioche.player = num
 		$Cartes.get_child(child_id).add_child(carte_pioche)
 		
 func find_carte_up():
