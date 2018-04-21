@@ -9,6 +9,7 @@
 position = Vector2( 1024.02, 309.421 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform" ]
+num = 2
 
 [node name="joueur2" parent="." index="1" instance=ExtResource( 1 )]
 

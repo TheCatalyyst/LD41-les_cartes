@@ -12,11 +12,13 @@ d = 0.0
 [node name="joueur" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-carte_select = 0
-vie = 1.0
+num = 1
+vie = 10.0
 pioche = [ "res://cartes/carte_attack.tscn", "res://cartes/carte_shield.tscn" ]
 
-[node name="Area2D" type="Area2D" parent="." index="0"]
+[node name="Area2D" type="Area2D" parent="." index="0" groups=[
+"Joueur",
+]]
 
 editor/display_folded = true
 input_pickable = false
