@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
 d = 0.0
 
-[node name="joueur" type="Node2D"]
+[node name="joueur" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 carte_select = 0

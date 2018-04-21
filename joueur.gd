@@ -10,6 +10,8 @@ func _ready():
 	piocher_carte()
 	piocher_carte()
 	piocher_carte()
+	carte_select = 0
+	$Cartes.get_child(carte_select).get_child(0).retourner_carte()
 
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_down")):
