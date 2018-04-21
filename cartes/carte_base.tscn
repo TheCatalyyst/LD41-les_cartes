@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://cartes/carte_base.gd" type="Script" id=1]
 
@@ -13,19 +13,23 @@ flags = 4
 gradient = SubResource( 1 )
 width = 2048
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="Gradient" id=5]
 
-flags = 0
-region = Rect2( 0, 0, 0, 0 )
-margin = Rect2( 0, 0, 0, 0 )
-filter_clip = false
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 1 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="GradientTexture" id=6]
+
+flags = 4
+gradient = SubResource( 5 )
+width = 2048
+
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 61.091, 76.0665 )
 
-[node name="carte_base" type="RigidBody2D" groups=[
+[node name="carte_base" type="RigidBody2D" index="0" groups=[
 "Carte",
 ]]
 
@@ -72,7 +76,7 @@ _sections_unfolded = [ "Animation" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 0.970604, -0.323534 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_carte_base_body_entered"]
 

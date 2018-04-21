@@ -77,6 +77,6 @@ func find_carte_down():
 	
 	while(carte_select != origin_select && $Cartes.get_child(carte_select).est_vide()):
 		carte_select -= 1
-	if(carte_select < 0):
-		carte_select = $Cartes.get_child_count() - 1
+		if(carte_select < 0):
+			carte_select = $Cartes.get_child_count() - 1
 		

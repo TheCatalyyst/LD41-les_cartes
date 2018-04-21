@@ -6,7 +6,5 @@
 [node name="carte_base" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-speed = null
-rot = null
 
 
