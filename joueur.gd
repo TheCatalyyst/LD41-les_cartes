@@ -42,6 +42,7 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	# En espérant que ce soit une carte
+	vie -= body.dmgToPlayer
 	body.OnContactPlayer()
 	
 func piocher_carte():

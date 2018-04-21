@@ -37,8 +37,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Cartes" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="conteneur" parent="Cartes" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 86.7166, -186.288 )
