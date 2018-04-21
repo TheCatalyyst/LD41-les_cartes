@@ -5,6 +5,7 @@ export(float) var rot;
 
 func _ready():
 	set_mode(MODE_STATIC)
+	lancer(Vector2 (1,0))
 
 
 func retourner_carte():
@@ -22,6 +23,6 @@ func _on_Area2D_body_entered(body):
 	pass
 func lancer(dir):
 	set_mode(MODE_RIGID)
-	set_linear_velocity(dir.normalized*speed)
+	set_linear_velocity(dir.normalized()*speed)
 	set_angular_velocity(rot)
 	
