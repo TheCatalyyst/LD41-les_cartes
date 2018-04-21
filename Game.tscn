@@ -8,9 +8,11 @@
 
 position = Vector2( 1024.02, 309.421 )
 rotation = -3.13325
+nbCartes = null
 
 [node name="joueur2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( 2.51755, 286.999 )
+nbCartes = null
 
 
