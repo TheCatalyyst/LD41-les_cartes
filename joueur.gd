@@ -18,17 +18,13 @@ func _process(delta):
 	if(Input.is_action_just_pressed("action_down_" + String(num))):
 		if(!$Cartes.get_child(carte_select).est_vide()):
 			$Cartes.get_child(carte_select).get_child(0).retourner_carte()
-		carte_select = carte_select + 1
-		if(carte_select == $Cartes.get_child_count()):
-			carte_select = 0
+		find_carte_up()
 		if(!$Cartes.get_child(carte_select).est_vide()):
 			$Cartes.get_child(carte_select).get_child(0).retourner_carte()
 	if(Input.is_action_just_pressed("action_up_" + String(num))):
 		if(!$Cartes.get_child(carte_select).est_vide()):
 			$Cartes.get_child(carte_select).get_child(0).retourner_carte()
-		carte_select = (carte_select - 1)
-		if(carte_select < 0):
-			carte_select = $Cartes.get_child_count() - 1
+		find_carte_down()
 		if(!$Cartes.get_child(carte_select).est_vide()):
 			$Cartes.get_child(carte_select).get_child(0).retourner_carte()
 	if(Input.is_action_just_pressed("action_launch_" + String(num))):
@@ -38,7 +34,13 @@ func _process(delta):
 				dir = Vector2(1,0)
 			else:
 				dir = Vector2(-1, 0)
-			$Cartes.get_child(carte_select).get_child(0).lancer(dir)
+			var launch_child = $Cartes.get_child(carte_select).get_child(0)
+			
+			var transf = launch_child.global_transform
+			launch_child.get_parent().remove_child(launch_child)
+			$CartesActives.add_child(launch_child)
+			launch_child.global_transform = transf
+			launch_child.lancer(dir)
 
 func _on_Area2D_body_entered(body):
 	# En espérant que ce soit une carte
@@ -53,4 +55,28 @@ func piocher_carte():
 	if(child_id < $Cartes.get_child_count()):
 		var carte_pioche = load(pioche[randi() % pioche.size()]).instance()
 		$Cartes.get_child(child_id).add_child(carte_pioche)
+		
+func find_carte_up():
+	var origin_select = carte_select
 	
+	carte_select += 1
+	if(carte_select == $Cartes.get_child_count()):
+		carte_select = 0
+	
+	while(carte_select != origin_select && $Cartes.get_child(carte_select).est_vide()):
+		carte_select += 1
+		if(carte_select == $Cartes.get_child_count()):
+			carte_select = 0
+			
+func find_carte_down():
+	var origin_select = carte_select
+	
+	carte_select -= 1
+	if(carte_select < 0):
+		carte_select = $Cartes.get_child_count() - 1
+	
+	while(carte_select != origin_select && $Cartes.get_child(carte_select).est_vide()):
+		carte_select -= 1
+	if(carte_select < 0):
+		carte_select = $Cartes.get_child_count() - 1
+		

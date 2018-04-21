@@ -37,6 +37,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Cartes" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="conteneur" parent="Cartes" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 86.7166, -186.288 )
@@ -56,6 +58,8 @@ position = Vector2( 86.7166, 98.7071 )
 [node name="conteneur5" parent="Cartes" index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 86.7166, 209.744 )
+
+[node name="CartesActives" type="Node2D" parent="." index="2"]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
