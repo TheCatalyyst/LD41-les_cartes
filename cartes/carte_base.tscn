@@ -29,7 +29,7 @@ width = 2048
 custom_solver_bias = 0.0
 extents = Vector2( 61.091, 76.0665 )
 
-[node name="carte_base" type="RigidBody2D" index="0"]
+[node name="carte_base" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -53,6 +53,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Linear", "Transform" ]
 speed = 100.0
 rot = 1.0
+player = null
 dmgToPlayer = null
 
 [node name="cache" type="Sprite" parent="." index="0"]

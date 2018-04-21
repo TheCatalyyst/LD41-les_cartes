@@ -9,13 +9,12 @@ custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
 d = 0.0
 
-[node name="joueur" type="Node2D" index="0"]
+[node name="joueur" type="Node2D"]
 
 script = ExtResource( 1 )
-nb_cartes = 1
 carte_select = 0
 vie = 1.0
-pioche = [ "res://cartes/carte_base.tscn" ]
+pioche = [ "res://cartes/carte_attack.tscn", "res://cartes/carte_shield.tscn" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -35,6 +34,8 @@ shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Cartes" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="conteneur" parent="Cartes" index="0" instance=ExtResource( 2 )]
 
