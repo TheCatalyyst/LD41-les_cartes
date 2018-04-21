@@ -7,7 +7,8 @@
 [node name="joueur" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 1024.02, 309.421 )
-rotation = -3.13325
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="joueur2" parent="." index="1" instance=ExtResource( 1 )]
 

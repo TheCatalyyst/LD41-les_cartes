@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://joueur.gd" type="Script" id=1]
+[ext_resource path="res://joueurs/conteneur_carte.tscn" type="PackedScene" id=2]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -8,25 +9,53 @@ custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
 d = 0.0
 
-[node name="joueur" type="Area2D" index="0"]
+[node name="joueur" type="Node2D"]
 
-input_pickable = true
+script = ExtResource( 1 )
+nb_cartes = 1
+carte_select = 0
+vie = 1.0
+pioche = [ "res://cartes/carte_base.tscn" ]
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+linear_damp = -1.0
+angular_damp = -1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 1 )
-vie = 10.0
-num = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 rotation = 1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="body_entered" from="." to="." method="_on_joueur_body_entered"]
+[node name="Cartes" type="Node2D" parent="." index="1"]
+
+[node name="conteneur" parent="Cartes" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 86.7166, -186.288 )
+
+[node name="conteneur2" parent="Cartes" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 86.7166, -99.3089 )
+
+[node name="conteneur3" parent="Cartes" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 86.7166, -4.92746 )
+
+[node name="conteneur4" parent="Cartes" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 86.7166, 98.7071 )
+
+[node name="conteneur5" parent="Cartes" index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 86.7166, 209.744 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 

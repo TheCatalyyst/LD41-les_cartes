@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://joueurs/conteneur_carte.gd" type="Script" id=1]
+
+[node name="conteneur" type="Position2D" index="0"]
+
+position = Vector2( 0, 62.9158 )
+script = ExtResource( 1 )
+
+
