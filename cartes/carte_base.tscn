@@ -53,6 +53,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Linear", "Transform" ]
 speed = 100.0
 rot = 1.0
+dmgToPlayer = null
 
 [node name="cache" type="Sprite" parent="." index="0"]
 
