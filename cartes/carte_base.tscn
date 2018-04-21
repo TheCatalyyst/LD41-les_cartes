@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://cartes/carte_base.gd" type="Script" id=1]
 
@@ -13,27 +13,25 @@ flags = 4
 gradient = SubResource( 1 )
 width = 2048
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="AtlasTexture" id=6]
 
-offsets = PoolRealArray( 0, 1 )
-colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 1 )
-
-[sub_resource type="GradientTexture" id=4]
-
-flags = 4
-gradient = SubResource( 3 )
-width = 2048
+flags = 0
+region = Rect2( 0, 0, 0, 0 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
 
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 61.091, 76.0665 )
 
-[node name="carte_base" type="RigidBody2D"]
+[node name="carte_base" type="RigidBody2D" groups=[
+"Carte",
+]]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 0
+collision_mask = 0
 mode = 2
 mass = 1.0
 friction = 0.0
@@ -41,8 +39,8 @@ bounce = 0.0
 gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 1
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -50,11 +48,13 @@ linear_damp = 0.0
 angular_velocity = 0.0
 angular_damp = 0.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Angular", "Linear", "Transform" ]
-speed = 100.0
-rot = 1.0
+_sections_unfolded = [ "Angular", "Collision", "Linear", "Transform" ]
+speed = 300.0
+rot = 2.0
 player = null
-dmgToPlayer = null
+dmg = 1
+spriteNo = null
+HP = 1
 
 [node name="cache" type="Sprite" parent="." index="0"]
 
@@ -66,11 +66,14 @@ texture = SubResource( 2 )
 
 position = Vector2( 0.560684, -0.746849 )
 scale = Vector2( 0.0599089, 27.5658 )
-texture = SubResource( 4 )
+texture = SubResource( 6 )
+_sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 0.970604, -0.323534 )
 shape = SubResource( 5 )
+
+[connection signal="body_entered" from="." to="." method="_on_carte_base_body_entered"]
 
 
